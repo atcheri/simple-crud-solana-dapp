@@ -1,5 +1,5 @@
 {
-  "address": "6z68wfurCMYkZG51s1Et9BJEd9nJGUusjHXNt4dGbNNF",
+  "address": "2m5hHVk1XhKRE3nia6r2xGHiAjMxYN7TVda68iieXv5b",
   "metadata": {
     "name": "crud",
     "version": "0.1.0",
@@ -53,6 +53,52 @@
         },
         {
           "name": "message",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "delete_journal_entry",
+      "discriminator": [
+        156,
+        50,
+        93,
+        5,
+        157,
+        97,
+        188,
+        114
+      ],
+      "accounts": [
+        {
+          "name": "journal_entry",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "arg",
+                "path": "title"
+              },
+              {
+                "kind": "account",
+                "path": "owner"
+              }
+            ]
+          }
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "_title",
           "type": "string"
         }
       ]
